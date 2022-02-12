@@ -1,4 +1,4 @@
-export function toggleLesson(module, lesson) {
+export function toggleLessonAction(module, lesson) {
   return {
     type: "TOGGLE_LESSON",
     module,

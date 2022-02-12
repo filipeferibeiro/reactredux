@@ -1,6 +1,9 @@
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-function Video({ activeModule, activeLesson }) {
+function Video() {
+  const activeLesson = useSelector(state => state.course.activeLesson);
+  const activeModule = useSelector(state => state.course.activeModule);
+
   return (
     <div>
       <strong>Módulo {activeModule.title}</strong>
@@ -11,7 +14,4 @@ function Video({ activeModule, activeLesson }) {
   );
 }
 
-export default connect((state) => ({
-  activeLesson: state.course.activeLesson,
-  activeModule: state.course.activeModule,
-}))(Video);
+export default Video;
